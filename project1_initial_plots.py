@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Import data files
 data_to_fit = np.loadtxt("data_to_fit.txt",skiprows=2)
 unoscillated_data = np.loadtxt("unoscillated_flux.txt",skiprows=2)
 energies = np.arange(0.025,10,0.05)
 
+# Function to plot histograms of experimental and simulated data
 def plot_hists(experimental,unoscillated,energies):
     plt.bar(energies, data_to_fit,align = 'center',width = 0.05,alpha = 0.8)
     plt.title("Experimental Data")
@@ -19,6 +21,7 @@ def plot_hists(experimental,unoscillated,energies):
     #plt.savefig('unoscillated_events.png')
     plt.show()
 
+# Probability function for neutrino decay
 def P(E,params):
     theta,dm,L = params[0],params[1],params[2]
     A = np.sin(2*theta)
