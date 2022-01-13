@@ -1,6 +1,3 @@
-# Project 1: Neutrino Oscillations
-# CID: 01709594
-
 import numpy as np
 import matplotlib.pyplot as plt
 
